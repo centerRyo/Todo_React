@@ -1,0 +1,41 @@
+{
+  "name": "todo_react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/centerRyo/Todo_React.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/centerRyo/Todo_React/issues"
+  },
+  "homepage": "https://github.com/centerRyo/Todo_React#readme",
+  "dependencies": {
+    "jquery": "^3.5.1",
+    "lodash": "^4.17.15",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.1.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "browser-sync": "^2.26.7",
+    "browserify": "^16.5.1",
+    "gulp": "^3.9.1",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-webpack": "^1.5.0",
+    "vinyl-source-stream": "^2.0.0",
+    "webpack": "^4.43.0",
+    "webpack-stream": "^5.2.1"
+  }
+}
