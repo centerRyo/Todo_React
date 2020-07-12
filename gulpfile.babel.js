@@ -14,3 +14,25 @@ gulp.task('build', function() {
     .pipe(webpack(webpackConfig))
     .pipe(gulp.dest('dist/js/'))
 });
+
+gulp.task('browser-sync', function() {
+  browserSync({
+    server: {
+      baseDir: './',
+      index: 'index.html'
+    }
+  });
+});
+
+gulp.task('bs-reload', function() {
+  browserSync.reload();
+});
+
+// gulpを使ったファイルの監視
+gulp.task('default', ['build', 'browser-sync'], function() {
+  gulp.watch('./*.html', ['bs-reload']);
+  gulp.watch('./src/*/*.js', ['build']);
+  gulp.watch('./src/*/*/*.js', ['build']);
+  gulp.watch('./dist/*/*.+(js|css)', ['bs-reload']);
+  gulp.watch('./dist/*/*/*.+(js|css)', ['bs-reload']);
+});
