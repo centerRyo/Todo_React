@@ -56,13 +56,13 @@ export default class Task extends React.Component {
     });
     const classNameIcon = ClassNames({
       'far': true,
-      'fa-circle': this.state.isDone,
-      'fa-check-circle': !this.state.isDone,
+      'fa-circle': !this.state.isDone,
+      'fa-check-circle': this.state.isDone,
       'icon-check': true
     });
 
     const input = (this.state.editMode) ?
-      <input type="text" className="editText" value={this.state.text} onChange={this.handleChangeText} onClick={this.handleKeyUpCloseEdit} /> :
+      <input type="text" className="editText" value={this.state.text} onChange={this.handleChangeText} onKeyUp={this.handleKeyUpCloseEdit} /> :
       <span onClick={this.handleClickShowEdit}>{this.state.text}</span>;
 
     return (
