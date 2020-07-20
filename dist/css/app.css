@@ -43,10 +43,11 @@ body {
 }
 
 .error {
-  display: none;
+  display: block;
   color: #d6d618;
   font-weight: bold;
   font-size: 16px;
+  margin-bottom: 15px;
 }
 
 .btn {
