@@ -18,11 +18,14 @@ class TodoApp extends React.Component {
           id: this.createHashId(),
           text: 'sample todo02'
         }
-      ]
+      ],
+      searchText: ''
     };
 
     this.callBackAddTask = this.callBackAddTask.bind(this);
     this.callBackRemoveTask = this.callBackRemoveTask.bind(this);
+    this.callBackSearch = this.callBackSearch.bind(this);
+    this.filterCollection = this.filterCollection.bind(this);
   }
 
   createHashId() {
@@ -44,12 +47,26 @@ class TodoApp extends React.Component {
     });
   }
 
+  callBackSearch(val) {
+    this.setState({
+      searchText: val
+    });
+  }
+
+  filterCollection(elm) {
+    const regexp = new RegExp('^' + this.state.searchText, 'i');
+    return (elm.text.match(regexp));
+  }
+
   render() {
+    const data = (this.state.searchText) ? this.state.data.filter(this.filterCollection) : this.state.data;
     return (
       <div>
         <TodoCreator callBackAddTask={this.callBackAddTask} />
 
-        <TodoList data={this.state.data} callBackRemoveTask={this.callBackRemoveTask} />
+        <Search callBackSearch={this.callBackSearch} />
+
+        <TodoList data={data} callBackRemoveTask={this.callBackRemoveTask} />
       </div>
     );
   }
