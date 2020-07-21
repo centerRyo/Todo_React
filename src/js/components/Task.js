@@ -29,7 +29,7 @@ export default class Task extends React.Component {
   }
 
   handleClickToggleDone() {
-    this.setState(prevState => ( {
+    this.setState(prevState => ({
       isDone: !prevState.isDone
     }));
   }
