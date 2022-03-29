@@ -29,7 +29,7 @@ gulp.task('bs-reload', function() {
 });
 
 // gulpを使ったファイルの監視
-gulp.task('default', ['build', 'browser-sync'], function() {
+gulp.task('default', gulp.parallel('build', 'browser-sync'), function() {
   gulp.watch('./*.html', ['bs-reload']);
   gulp.watch('./src/*/*.js', ['build']);
   gulp.watch('./src/*/*/*.js', ['build']);
